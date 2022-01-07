@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import { Button } from './Button';
 import Cards from './Cards';
 import './MainSection.css';
 
@@ -10,6 +11,15 @@ function MainSection() {
       <image src='../assets/img-home.jpg'/>
       <h1>WELCOME TO LOTUS SPA!</h1>
       <p>Do something today that your future self will thank you for.</p>
+      <div className='main-btns'>
+        <Button
+          className='btns'
+          buttonStyle='btn--outline'
+          buttonSize='btn--large'
+        >
+          MAKE AN APPOINTMENT
+        </Button>
+      </div>
     </div>
     <div className='main-text'>
     <h1>ABOUT</h1>

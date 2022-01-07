@@ -68,3 +68,11 @@
 .main-clients {
   height: 100vh;
 }
+
+.main-btns {
+  margin-top: 32px;
+}
+
+.main-btns .btn {
+  margin: 6px;
+}
