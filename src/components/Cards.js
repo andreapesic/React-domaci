@@ -20,14 +20,14 @@ function Cards() {
         },
         {
             name: 'Meryl Johnnson',
-            text: 'Fantastic massage from Julie, who was attentive and professional, listened to what I had to say and offered advice. The massage was gentle but definitely did the trick, soothing some muscle pain I had in my back.',
+            text: 'Fantastic massage from Julie, who was attentive and professional, listened to what I had to say and offered advice. The massage was gentle but definitely did the trick.',
             src: Image3
         }
     ];  
 
   return (
     <div className='cards'>
-      <h1>What our clients say?</h1>
+      <h1>WHAT OUR CLIENTS SAY?</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>

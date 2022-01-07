@@ -16,6 +16,7 @@ function MainSection() {
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
+          link='/services'
         >
           MAKE AN APPOINTMENT
         </Button>
