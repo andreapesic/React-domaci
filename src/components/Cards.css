@@ -13,8 +13,7 @@ h1 {
   display: flex;
   flex-flow: column;
   align-items: center;
-  max-width: 1120px;
-  width: 90%;
+  width: 1120px;
   margin: 0 auto;
 }
 
@@ -38,7 +37,7 @@ h1 {
   display: flex;
   flex-flow: column;
   width: 100%;
-  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  box-shadow: 0 6px 20px rgba(98, 98, 99, 0.17);
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   border-radius: 10px;
@@ -109,11 +108,32 @@ h1 {
     "Lucida Sans", Arial, sans-serif;
 }
 
-@media only screen and (min-width: 1200px) {
-  .content__blog__container {
-    width: 84%;
-  }
+/* Star Icon */
+
+.fa-star {
+  font-size: 1.8rem;
+  color: indianred;
+  padding: 1rem;
 }
+
+ul {
+  margin-top: 20px;
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ul li > p {
+  font-size: 24px;
+  color: indianred;
+  margin-right: 20px;
+  margin-left: -5px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+/*Media query*/
 
 @media only screen and (min-width: 1024px) {
   .cards__items {
