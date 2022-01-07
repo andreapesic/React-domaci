@@ -6,7 +6,7 @@ function CardItem({obj, type}) {
     <>
       <li className='cards__item'>
         <div className='cards__item__link'>
-          <figure className='cards__item__pic-wrap' data-category={type=='clients' ? '"' : obj.name}>
+          <figure className='cards__item__pic-wrap' data-category={type=='clients' ? '“' : obj.name}>
             <img
               className='cards__item__img'
               src={obj.src}
