@@ -1,7 +1,26 @@
 import React from 'react';
 import { Button } from './Button';
+import { useState } from 'react';
 
 function CardItem({obj, type}) {
+  const [starNum, setStarNum] = useState(obj.star);
+  const [clicked, setClicked] = useState(false);
+
+  const onClick1 = () => {
+    if(!clicked) {
+      setStarNum(starNum+1);
+      setClicked(true);
+    }
+  }
+
+  const onClick2 = () => {
+    if(clicked) {
+      setStarNum(starNum-1);
+      setClicked(false);
+    }
+  }
+
+
   return (
     <>
       <li className='cards__item'>
@@ -18,10 +37,13 @@ function CardItem({obj, type}) {
             {type == 'clients' ? <></> : 
               <div className='star-container'>
                 <ul>
-                  <li><i class="fas fa-star"></i></li>
-                  <li><p className='star-number'>{Math.floor((Math.random() * 5) + 1)}</p></li>
                   <li>
-                    <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--medium' link='/services'>
+                    {clicked == false ? <i class="far fa-star" onClick={onClick1}></i> :
+                     <i class="fas fa-star" onClick={onClick2}></i>}
+                  </li>
+                  <li><p className='star-number'>{starNum}</p></li>
+                  <li>
+                    <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--medium' link={'/services'}>
                       MAKE AN APPOINTMENT
                     </Button>
                   </li>

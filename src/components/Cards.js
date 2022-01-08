@@ -18,7 +18,7 @@ function Cards({data1, data2, title, type}) {
             data2 != null ? 
             <ul className='cards__items'>
               {
-                data2.map(item => (<CardItem obj={item} type={type} />))
+                data2.map(item => (<CardItem obj={item} type={type}/>))
               }
            </ul> : <></>
           }

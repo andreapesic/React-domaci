@@ -2,8 +2,26 @@ import React from 'react';
 import './Footer.css';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 function Footer() {
+
+  const [buttonClick, setButtonClick] = useState('');
+
+  const onClick = () => {
+    if(buttonClick != '') {
+      setButtonClick('');
+      setTimeout(() => {
+        alert('Thank you for subscribing!');
+      }, 10);
+    }
+  }
+
+  const onChange = (e) => {
+    setButtonClick(e.target.value);
+  }
+  
+
   return (
     <div className='footer-container'>
       <section className='footer-subscription'>
@@ -20,8 +38,10 @@ function Footer() {
               name='email'
               type='email'
               placeholder='Your Email'
+              value={buttonClick}
+              onChange={onChange}
             />
-            <Button buttonStyle='btn--outline' link='/'>Subscribe</Button>
+            <Button buttonStyle='btn--outline' onClick={onClick} link={'/'} >Subscribe</Button>
           </form>
         </div>
       </section>

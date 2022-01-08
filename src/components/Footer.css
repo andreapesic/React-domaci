@@ -5,7 +5,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50vh;
 }
 
 .footer-subscription {
@@ -47,6 +46,7 @@
 
 .input-areas {
   margin-top: 10px;
+  width: 100%;
 }
 
 .footer-links {
