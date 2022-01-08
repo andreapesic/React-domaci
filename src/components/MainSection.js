@@ -58,7 +58,7 @@ function MainSection() {
       </p>
     </div>
     <div className='main-clients'>
-      <Cards title='WHAT OUR CLIENTS SAY?' data1={clients} type='clients'></Cards>
+      <Cards title='WHAT DO OUR CLIENTS SAY?' data1={clients} type='clients'></Cards>
     </div>
     </>
     

@@ -1,5 +1,5 @@
 .cards {
-  padding: 4rem;
+  padding: 3rem;
   background: #fff;
 }
 
@@ -50,6 +50,7 @@ h1 {
   width: 100%;
   padding-top: 67%;
   overflow: hidden;
+  height: 300px;
 }
 
 .fade-img {
@@ -64,7 +65,7 @@ h1 {
   margin-left: 10px;
   padding: 6px 8px;
   max-width: calc((100%) - 60px);
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 700;
   color: #fff;
   background-color: indianred;
@@ -103,7 +104,7 @@ h1 {
 }
 
 .cards__item__text {
-  text-align: center;
+  text-align: justify;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }

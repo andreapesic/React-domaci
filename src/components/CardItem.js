@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from './Button';
 import { useState } from 'react';
 
-function CardItem({obj, type}) {
+function CardItem({obj, type, makeAnAppointment}) {
   const [starNum, setStarNum] = useState(obj.star);
   const [clicked, setClicked] = useState(false);
 
@@ -43,7 +43,14 @@ function CardItem({obj, type}) {
                   </li>
                   <li><p className='star-number'>{starNum}</p></li>
                   <li>
-                    <Button className='btns' buttonStyle='btn--primary' buttonSize='btn--medium' link={'/services'}>
+                    <Button 
+                      className='btns' 
+                      buttonStyle='btn--primary' 
+                      buttonSize='btn--medium' 
+                      link={'/services'} 
+                      id = {obj.id}
+                      onClick={makeAnAppointment}
+                    >
                       MAKE AN APPOINTMENT
                     </Button>
                   </li>
