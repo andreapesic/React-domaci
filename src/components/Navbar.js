@@ -24,7 +24,7 @@ function Navbar({num}) {
                 Services
               </Link>
             </li>
-            <li>
+            <li className='nav-item'>
               <Link
                 to='/appointments'
                 className='nav-links'
@@ -32,12 +32,15 @@ function Navbar({num}) {
                 Appointments
               </Link>
             </li> 
-            <li>
+            <li className='nav-item'>
+              <div>
               <p
-                className='nav-links'
+               
+                className='nav-links1'
               >
                 {num}
               </p>
+              </div>
             </li> 
           </ul>
         </div>

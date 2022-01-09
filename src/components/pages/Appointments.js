@@ -6,7 +6,8 @@ import { Button } from '../Button';
 function Appointments({data, deleteAnAppointment}) {
 
     const headingStyle = {
-        'color': '#fff'
+        'color': '#fff',
+        'margin-top': '-50px'
     }
 
     return (
