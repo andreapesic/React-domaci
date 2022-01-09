@@ -10,13 +10,11 @@ import { useState } from 'react';
 
 function App() {
 
-  const [appts, setAppts] = useState([]);
-
-
-  const [services1] = useState([
+  const s1 = [
     {
         id: 1,
         star: 305,
+        checked: false,
         name: 'Massage',
         added: false,
         date: '20th Jan 2022 09:30 AM',
@@ -26,6 +24,7 @@ function App() {
     {
         id: 2,
         star: 476,
+        checked: false,
         name: 'Sauna',
         added: false,
         date: '24th Jan 2022 09:30 AM',
@@ -35,6 +34,7 @@ function App() {
     {
         id: 3,
         star: 621,
+        checked: false,
         added: false,
         date: '13th Jan 2022 09:30 AM',
         name: 'Pool',
@@ -42,38 +42,117 @@ function App() {
         src: 'https://images.unsplash.com/photo-1529290130-4ca3753253ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1176&q=80'
     },
 
-]);
+];
 
-const [services2] = useState([
-    {
-        id: 4,
-        star: 456,
-        name: 'Manicure',
-        added: false,
-        date: '1st Feb 2022 09:30 AM',
-        text: 'For both men and women, manicures are excellent for maintaining healthy nails, cuticles and skin. Regardless of your profession, people notice other’s hands and the presentation and cleanliness of your hands will be judged. Having your hands and nails groomed by a skilled therapist achieves a clean and professional look that can be difficult attain yourself. The pampering aspect of a manicure allows you to de-stress, relax and enjoy some "me time". ',
-        src: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-    },
-    {
-        id: 5,
-        star: 534,
-        added: false,
-        date: '6th Jun 2022 09:30 AM',
-        name: 'Pedicure',
-        text: 'Getting a pedicure is a wonderful way to pamper your feet. It can be a perfect excuse for some “me time’ to sit back and relax. Alternatively, you can catch up with friends over a pedicure. Regular pedicures keep your feet fresh and healthy. They help prevent nail disorders like ingrown nails and can tend to excess or hardened skin on your feet. Even though not all pedicures involve painting your nails, for those that do it can be a fun and creative.',
-        src: 'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
-    },
-    {
-        id: 6,
-        star: 234,
-        added: false,
-        date: '17th May 2022 09:30 AM',
-        name: 'Face treatment',
-        text: 'The short-term benefits of facial treatment can be seen during and after treatment. When the treatment is finished, the face feels completely fresh and clean. Skin feels softer and more hydrated right away, and the client feels relaxed. Acne breakouts may fade or disappear gradually after treatment. The skin may feel plumper in the case of mature skin. Regular facial treatments lead to a better appearance of the skin, especially every month.',
-        src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
-    },
+const s2 = [
+  {
+      id: 4,
+      star: 456,
+      checked: false,
+      name: 'Manicure',
+      added: false,
+      date: '1st Feb 2022 09:30 AM',
+      text: 'For both men and women, manicures are excellent for maintaining healthy nails, cuticles and skin. Regardless of your profession, people notice other’s hands and the presentation and cleanliness of your hands will be judged. Having your hands and nails groomed by a skilled therapist achieves a clean and professional look that can be difficult attain yourself. The pampering aspect of a manicure allows you to de-stress, relax and enjoy some "me time". ',
+      src: 'https://images.unsplash.com/photo-1632345031435-8727f6897d53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+  },
+  {
+      id: 5,
+      star: 534,
+      checked: false,
+      added: false,
+      date: '6th Jun 2022 09:30 AM',
+      name: 'Pedicure',
+      text: 'Getting a pedicure is a wonderful way to pamper your feet. It can be a perfect excuse for some “me time’ to sit back and relax. Alternatively, you can catch up with friends over a pedicure. Regular pedicures keep your feet fresh and healthy. They help prevent nail disorders like ingrown nails and can tend to excess or hardened skin on your feet. Even though not all pedicures involve painting your nails, for those that do it can be a fun and creative.',
+      src: 'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+  },
+  {
+      id: 6,
+      star: 234,
+      checked: false,
+      added: false,
+      date: '17th May 2022 09:30 AM',
+      name: 'Face treatment',
+      text: 'The short-term benefits of facial treatment can be seen during and after treatment. When the treatment is finished, the face feels completely fresh and clean. Skin feels softer and more hydrated right away, and the client feels relaxed. Acne breakouts may fade or disappear gradually after treatment. The skin may feel plumper in the case of mature skin. Regular facial treatments lead to a better appearance of the skin, especially every month.',
+      src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
+  },
 
-]);
+];
+
+const [appts, setAppts] = useState([]);
+ 
+const [services1, setSer1] = useState(s1);
+
+const [services2, setSer2] = useState(s2);
+
+const star1 = (serviceId) => {
+  let arr1 = [];
+  services1.forEach(element => {
+    if(element.id == serviceId) {
+    if(!element.checked) {
+      console.log(element);
+      element.star = element.star + 1;
+      element.checked = true;
+      console.log(element);
+      arr1.push(element);
+      
+    } 
+  }else{
+    arr1.push(element);
+  }
+  });
+  setSer1(arr1);
+  console.log(services1);
+  
+  let arr2 = [];
+  services2.forEach(element => {
+    if(element.id == serviceId) {
+    if(!element.checked) {
+      element.star = element.star + 1;
+      element.checked = true;
+      arr2.push(element);
+      
+    }
+  }
+  else{
+    arr2.push(element);
+  }
+  });
+  setSer2(arr2);
+  console.log(services2);
+}
+
+const star2 = (serviceId) => {
+  let arr1 = [];
+  services1.forEach(element => {
+    if(element.id == serviceId) {
+    if(element.checked) {
+      element.star = element.star - 1;
+      element.checked = false;
+      console.log(element);
+      arr1.push(element);
+    }
+  }
+  else{
+    arr1.push(element);
+  }
+  });
+  setSer1(arr1);
+  
+  let arr2 = [];
+  services2.forEach(element => {
+    if(element.id == serviceId) {
+    if(element.checked) {
+      element.star = element.star - 1;
+      element.checked = false;
+      arr2.push(element);
+    }
+  }
+  else{
+    arr2.push(element);
+  }
+  });
+  setSer2(arr2);
+}
 
 const makeApnt = (serviceId) => {
   console.log(serviceId);
@@ -96,7 +175,7 @@ const makeApnt = (serviceId) => {
 
 const deleteApnt = (serviceId) => {
   console.log(serviceId);
-  
+
   appts.forEach(element => {
     if(element.id == serviceId) {
       element.added = false;
@@ -112,7 +191,7 @@ const deleteApnt = (serviceId) => {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/services" element={<Services services1={services1} services2={services2} makeAnAppointment={makeApnt} />}/>
+        <Route path="/services" element={<Services services1={services1} services2={services2} makeAnAppointment={makeApnt} star1={star1} star2={star2}/>}/>
         <Route path="/appointments" element={<Appointments data={appts} deleteAnAppointment={deleteApnt} />}/>
       </Routes>
       <Footer></Footer>

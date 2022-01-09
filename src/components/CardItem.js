@@ -2,53 +2,35 @@ import React from 'react';
 import { Button } from './Button';
 import { useState } from 'react';
 
-function CardItem({obj, type, makeAnAppointment}) {
-  const [starNum, setStarNum] = useState(obj.star);
-  const [clicked, setClicked] = useState(false);
-
-  const onClick1 = () => {
-    if(!clicked) {
-      setStarNum(starNum+1);
-      setClicked(true);
-    }
-  }
-
-  const onClick2 = () => {
-    if(clicked) {
-      setStarNum(starNum-1);
-      setClicked(false);
-    }
-  }
-
-
+function CardItem({name, src, star, checked, type, makeAnAppointment, star1, star2, id, text}) {
   return (
     <>
       <li className='cards__item'>
         <div className='cards__item__link'>
-          <figure className='cards__item__pic-wrap' data-category={type=='clients' ? '“' : obj.name}>
+          <figure className='cards__item__pic-wrap' data-category={type=='clients' ? '“' : name}>
             <img
               className='cards__item__img'
-              src={obj.src}
+              src={src}
             />
           </figure>
           <div className='cards__item__info'>
-            <p className='cards__item__text'>{obj.text}</p>
-            {type == 'clients' ? <h5 className='cards__item__title'>{obj.name}</h5> : <></> }
+            <p className='cards__item__text'>{text}</p>
+            {type == 'clients' ? <h5 className='cards__item__title'>{name}</h5> : <></> }
             {type == 'clients' ? <></> : 
               <div className='star-container'>
                 <ul>
-                  <li>
-                    {clicked == false ? <i class="far fa-star" onClick={onClick1}></i> :
-                     <i class="fas fa-star" onClick={onClick2}></i>}
+                  <li>                   
+                    {checked == false ? <i class="far fa-star" onClick={()=>{star1(id)}}></i> :
+                     <i class="fas fa-star" onClick={()=>star2(id)}></i>}                   
                   </li>
-                  <li><p className='star-number'>{starNum}</p></li>
+                  <li><p className='star-number'>{star}</p></li>
                   <li>
                     <Button 
                       className='btns' 
                       buttonStyle='btn--primary' 
                       buttonSize='btn--medium' 
                       link={'/services'} 
-                      id = {obj.id}
+                      id = {id}
                       onClick={makeAnAppointment}
                     >
                       MAKE AN APPOINTMENT

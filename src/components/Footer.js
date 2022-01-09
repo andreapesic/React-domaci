@@ -41,7 +41,7 @@ function Footer() {
               value={buttonClick}
               onChange={onChange}
             />
-            <Button buttonStyle='btn--outline' onClick={onClick} link={'/'} >Subscribe</Button>
+            <Button buttonStyle='btn--outline' onClick={onClick} link={'#'} >Subscribe</Button>
           </form>
         </div>
       </section>
@@ -55,46 +55,46 @@ function Footer() {
           </div>
           <small class='website-rights'>LOTUS © 2021</small>
           <div class='social-icons'>
-            <Link
+            <a
               class='social-icon-link facebook'
-              to='/'
+              href='https://www.facebook.com/lotusspacentre/'
               target='_blank'
               aria-label='Facebook'
             >
               <i class='fab fa-facebook-f' />
-            </Link>
-            <Link
+            </a>
+            <a
               class='social-icon-link instagram'
-              to='/'
+              href='https://www.instagram.com/lotusspacentre14a/?hl=en'
               target='_blank'
               aria-label='Instagram'
             >
               <i class='fab fa-instagram' />
-            </Link>
-            <Link
+            </a>
+            <a
               class='social-icon-link youtube'
-              to='/'
+              href='https://www.youtube.com/channel/UCIRntRkJdPT8wamZ677hnLw'
               target='_blank'
               aria-label='Youtube'
             >
               <i class='fab fa-youtube' />
-            </Link>
-            <Link
+            </a>
+            <a
               class='social-icon-link twitter'
-              to='/'
+              href='https://twitter.com/lotusspacentre1'
               target='_blank'
               aria-label='Twitter'
             >
               <i class='fab fa-twitter' />
-            </Link>
-            <Link
+            </a>
+            <a
               class='social-icon-link twitter'
-              to='/'
+              href='https://www.linkedin.com/in/lotus-skin-care-center-medi-spa-30279355'
               target='_blank'
               aria-label='LinkedIn'
             >
               <i class='fab fa-linkedin' />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
