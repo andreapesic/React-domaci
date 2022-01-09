@@ -11,7 +11,8 @@ function Services({services1, services2, makeAnAppointment, star1, star2}) {
                 type='services' 
                 makeAnAppointment={makeAnAppointment}
                 star1={star1}
-                star2={star2} />
+                star2={star2} 
+               />
         </div>
     )
 }

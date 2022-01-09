@@ -10,9 +10,12 @@ import { useState } from 'react';
 
 function App() {
 
+  const [appNum, setAppNum] = useState(0);
+
   const s1 = [
     {
         id: 1,
+        times: 0,
         star: 305,
         checked: false,
         name: 'Massage',
@@ -23,6 +26,7 @@ function App() {
     },
     {
         id: 2,
+        times: 0,
         star: 476,
         checked: false,
         name: 'Sauna',
@@ -33,6 +37,7 @@ function App() {
     },
     {
         id: 3,
+        times: 0,
         star: 621,
         checked: false,
         added: false,
@@ -47,6 +52,7 @@ function App() {
 const s2 = [
   {
       id: 4,
+      times: 0,
       star: 456,
       checked: false,
       name: 'Manicure',
@@ -57,6 +63,7 @@ const s2 = [
   },
   {
       id: 5,
+      times: 0,
       star: 534,
       checked: false,
       added: false,
@@ -67,6 +74,7 @@ const s2 = [
   },
   {
       id: 6,
+      times: 0,
       star: 234,
       checked: false,
       added: false,
@@ -159,11 +167,20 @@ const makeApnt = (serviceId) => {
   services1.forEach(element => {
     if(element.id === serviceId) {
       element.added = true;
+      element.times = element.times + 1;
+      if(element.times <= 1) {
+        setAppNum(appNum+1);
+      }
+      
     }
   });
   services2.forEach(element => {
     if(element.id === serviceId) {
       element.added = true;
+      element.times = element.times + 1;
+      if(element.times <= 1) {
+        setAppNum(appNum+1);
+      }
     }
   });
   let addedServices1 = services1.filter((item) => item.added == true);
@@ -179,6 +196,8 @@ const deleteApnt = (serviceId) => {
   appts.forEach(element => {
     if(element.id == serviceId) {
       element.added = false;
+      element.times = element.times - 1;
+      setAppNum(appNum-1);
     }
   });
 
@@ -188,10 +207,11 @@ const deleteApnt = (serviceId) => {
 
   return (
     <BrowserRouter className="App">
-      <Navbar></Navbar>
+      <Navbar num={appNum}></Navbar>
       <Routes>
         <Route path="/" element={<Home />}/>
-        <Route path="/services" element={<Services services1={services1} services2={services2} makeAnAppointment={makeApnt} star1={star1} star2={star2}/>}/>
+        <Route path="/services" element={<Services services1={services1} services2={services2} 
+          makeAnAppointment={makeApnt} star1={star1} star2={star2} />}/>
         <Route path="/appointments" element={<Appointments data={appts} deleteAnAppointment={deleteApnt} />}/>
       </Routes>
       <Footer></Footer>

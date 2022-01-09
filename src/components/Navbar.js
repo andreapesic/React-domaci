@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 
-function Navbar() {
+function Navbar({num}) {
   return (
     <>
       <nav className='navbar'>
@@ -31,6 +31,13 @@ function Navbar() {
               >
                 Appointments
               </Link>
+            </li> 
+            <li>
+              <p
+                className='nav-links'
+              >
+                {num}
+              </p>
             </li> 
           </ul>
         </div>

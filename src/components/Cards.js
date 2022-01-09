@@ -13,7 +13,7 @@ function Cards({data1, data2, title, type, makeAnAppointment, star1, star2}) {
            {
              data1.map(item => (<CardItem key={item.id} id={item.id} text={item.text}
               name={item.name} src={item.src} checked={item.checked} star={item.star} type={type} 
-              makeAnAppointment={makeAnAppointment}  star1={star1} star2={star2}/>))
+              makeAnAppointment={makeAnAppointment}  star1={star1} star2={star2} />))
            }
           </ul>
           {
@@ -22,7 +22,7 @@ function Cards({data1, data2, title, type, makeAnAppointment, star1, star2}) {
               {
                 data2.map(item => (<CardItem key={item.id} id={item.id} text={item.text}
                    name={item.name} src={item.src} checked={item.checked} star={item.star} type={type} 
-                   makeAnAppointment={makeAnAppointment} star1={star1} star2={star2}/>))
+                   makeAnAppointment={makeAnAppointment} star1={star1} star2={star2} />))
               }
            </ul> : <></>
           }
