@@ -163,41 +163,39 @@ const star2 = (serviceId) => {
 }
 
 const makeApnt = (serviceId) => {
-  console.log(serviceId);
+  //console.log(serviceId);
   services1.forEach(element => {
     if(element.id === serviceId) {
-      element.added = true;
-      element.times = element.times + 1;
-      if(element.times <= 1) {
+      if(element.added === false) {
         setAppNum(appNum+1);
+        element.added = true;
       }
-      
     }
   });
   services2.forEach(element => {
     if(element.id === serviceId) {
-      element.added = true;
-      element.times = element.times + 1;
-      if(element.times <= 1) {
+      if(element.added === false) {
         setAppNum(appNum+1);
+        element.added = true;
       }
     }
   });
   let addedServices1 = services1.filter((item) => item.added == true);
   let addedServices2 = services2.filter((item) => item.added == true);
   let addedServices = [...addedServices1, ...addedServices2];
-  console.log(addedServices);
+  //console.log(addedServices);
   setAppts(addedServices);
 }
 
 const deleteApnt = (serviceId) => {
-  console.log(serviceId);
+  //.log(serviceId);
 
   appts.forEach(element => {
     if(element.id == serviceId) {
-      element.added = false;
-      element.times = element.times - 1;
-      setAppNum(appNum-1);
+      if(element.added === true) {
+        setAppNum(appNum-1);
+        element.added = false;
+      }
     }
   });
 
