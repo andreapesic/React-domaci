@@ -3,6 +3,7 @@ import './Footer.css';
 import { Button } from './Button';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 
 function Footer() {
 
@@ -12,7 +13,15 @@ function Footer() {
     if(buttonClick != '') {
       setButtonClick('');
       setTimeout(() => {
-        alert('Thank you for subscribing!');
+        //alert('Thank you for subscribing!');
+        Swal.fire({
+          title: 'Great!',
+          text: 'Thank you for subscribing!',
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: 'indianred',
+          
+        });
       }, 10);
     }
   }
