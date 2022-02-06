@@ -32,7 +32,7 @@ function App() {
         name: 'Sauna',
         added: false,
         date: '24th Jan 2022 09:30 AM',
-        text: 'Saunas have been used for thousands of years and are still popular today. A sauna can help people to unwind and relax, and it may have other health benefits. Regardless of how a sauna is heated, or the humidity level, the effects on the body are similar. When a person sits in a sauna, their heart rate increases and blood vessels widen. This increases circulation, in a similar way to low to moderate exercise depending on the duration of sauna use. The reduction in stress levels when using a sauna may be linked to a lower risk of diseases.',
+        text: 'Saunas have been used for thousands of years and are still popular today. A sauna can help people to unwind and relax, and it may have other health benefits. Regardless of how a sauna is heated, or the humidity level, the effects on the body are similar. When a person sits in a sauna, their heart rate increases and blood vessels widen. This increases circulation, in a similar way to low to moderate exercise depending on the duration of sauna use. The reduction in stress levels when using a sauna.',
         src: 'https://images.unsplash.com/photo-1585815157396-ad62043f721b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
     },
     {
@@ -80,7 +80,7 @@ const s2 = [
       added: false,
       date: '17th May 2022 09:30 AM',
       name: 'Face treatment',
-      text: 'The short-term benefits of facial treatment can be seen during and after treatment. When the treatment is finished, the face feels completely fresh and clean. Skin feels softer and more hydrated right away, and the client feels relaxed. Acne breakouts may fade or disappear gradually after treatment. The skin may feel plumper in the case of mature skin. Regular facial treatments lead to a better appearance of the skin, especially every month.',
+      text: 'The short-term benefits of facial treatment can be seen during and after treatment. When the treatment is finished, the face feels completely fresh and clean. Skin feels softer and more hydrated right away, and the client feels relaxed. Acne breakouts may fade or disappear gradually after treatment. The skin may feel plumper in the case of mature skin. Regular facial treatments lead to a better appearance of the skin, especially when applying every month.',
       src: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'
   },
 
